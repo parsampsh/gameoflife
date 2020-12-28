@@ -185,3 +185,5 @@ if __name__ == '__main__':
             print('Error: Unknow option ' + err_str.replace('__init__() got an unexpected keyword argument ', ''))
         else:
             print('Error: ' + err_str)
+    except KeyboardInterrupt as err:
+        print('\nOh shit! God pressed CTRL+<some-fucking-key>! World was destroyed!')
