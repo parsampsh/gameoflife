@@ -65,7 +65,7 @@ class GameOfLife:
         self.border_char = border_char
         self.random_hard = int(random_hard)
         self.title = title
-        self.footer = 'By parsampsh'
+        self.footer = 'By parsampsh <parsampsh@gmail.com>'
         self.years = 0
 
         # initialize the world
