@@ -23,7 +23,7 @@ class GameOfLife:
     Licensed Under GPL-v3
 
     Cli Usage:
-        ./gameoflife.py --option1=value --option2=value ...
+        python3 -m gameoflife --option1=value --option2=value ...
 
     Code Usage:
         gol = GameOfLife(option1=value, option2=value...)
@@ -42,7 +42,7 @@ class GameOfLife:
         `random_har`    how much initialized live cells. every more means harder. default: `3`
 
     Cli Example:
-        ./gameoflife.py --width=100 --height=40 --live_char='@' --sleep_time=0.2 --title='my gameoflife'
+        gameoflife --width=100 --height=40 --live_char='@' --sleep_time=0.2 --title='my gameoflife'
 
     Code Example:
         GameOfLife(width=100, live_char='@' sleep_time=0.2, title="something").start()
@@ -166,7 +166,7 @@ class GameOfLife:
         output += footer
         print(output)
 
-if __name__ == '__main__':
+def cli_handle():
     if '--help' in argv:
         print(GameOfLife.__doc__)
         exit()
@@ -187,3 +187,7 @@ if __name__ == '__main__':
             print('Error: ' + err_str)
     except KeyboardInterrupt as err:
         print('\nOh shit! God pressed CTRL+<some-fucking-key>! World was destroyed!')
+
+if __name__ == '__main__':
+    cli_handle()
+
