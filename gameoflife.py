@@ -1,9 +1,9 @@
 #!/usr/bin/env python3
-import os
-import random
-import time
-import copy
-import sys
+from os import popen
+from random import random
+from time import sleep as time_sleep
+from copy import deepcopy
+from sys import argv, exit
 
 class GameOfLife:
     """
@@ -50,7 +50,7 @@ class GameOfLife:
     def __init__(self, height=None, width=None, live_char='+', dead_char=' ', sleep_time=0.05, border_char='#', title='Conway\'s Game of life', random_hard=3):
         # set the configuration
         self.world = []
-        terminal_height, terminal_width = os.popen('stty size', 'r').read().split()
+        terminal_height, terminal_width = popen('stty size', 'r').read().split()
         if height == None:
             self.h = int(int(terminal_height)/1.5)
         else:
@@ -83,12 +83,12 @@ class GameOfLife:
         while True:
             self.print_world()
             self.eval_world()
-            time.sleep(self.sleep_time)
+            time_sleep(self.sleep_time)
 
     def rand_number(self):
         """ Generates a random boolean """
         try:
-            num = int(str(random.random()).replace('.', ''))
+            num = int(str(random()).replace('.', ''))
             num = num % self.random_hard
             if num == 0:
                 return 1
@@ -118,7 +118,7 @@ class GameOfLife:
     def eval_world(self):
         """ Makes evalutions on world """
         world = self.world
-        new_world = copy.deepcopy(world)
+        new_world = deepcopy(world)
         i = 0
         while i < len(world):
             j = 0
@@ -167,11 +167,11 @@ class GameOfLife:
         print(output)
 
 if __name__ == '__main__':
-    if '--help' in sys.argv:
+    if '--help' in argv:
         print(GameOfLife.__doc__)
-        sys.exit()
+        exit()
     options = {}
-    for arg in sys.argv:
+    for arg in argv:
         if len(arg) > 2:
             if arg[:2] == '--':
                 value = arg.split('=', 1)
