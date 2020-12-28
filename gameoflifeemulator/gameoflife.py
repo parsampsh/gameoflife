@@ -39,7 +39,7 @@ class GameOfLife:
         `sleep_time`    sleep time between world frames(secounds). default: `0.05`
         `border_char`   the world border chars. default: `#`
         `title`         a title of the head of the world. default: `Conway's Game of life`
-        `random_har`    how much initialized live cells. every more means harder. default: `3`
+        `random_hard`   how much initialized live cells. every more means harder. default: `3`
 
     Cli Example:
         gameoflife --width=100 --height=40 --live_char='@' --sleep_time=0.2 --title='my gameoflife'
