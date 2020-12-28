@@ -1,11 +1,11 @@
 import setuptools
 
-from gameoflife import gameoflife
+from gameoflifeemulator import gameoflife
 long_description = gameoflife.GameOfLife.__doc__
 
 setuptools.setup(
-    name="gameoflife-emulator",
-    version="0.1",
+    name="gameoflifeemulator",
+    version="0.0.1",
     author="parsa shahmaleki",
     author_email="parsampsh@gmail.com",
     description="The game of life emulator",

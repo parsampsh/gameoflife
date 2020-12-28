@@ -1,6 +1,12 @@
 # The Game of life Emulator
 This software is a customizable emulator for [Game of life](https://en.wikipedia.org/wiki/Conway%27s_Game_of_Life).
 
+Installation:
+
+```bash
+$ pip3 install gameoflifeemulator
+```
+
 Simple Usage:
 
 ```bash
